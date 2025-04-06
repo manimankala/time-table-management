@@ -1,9 +1,10 @@
 import {RouterModule, Routes} from '@angular/router';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {TimeTableComponent} from './time-table/time-table.component';
-import {RegisterPageComponent} from './register-page/register-page.component';
+import {RegistrationComponent} from './register-page/register-page.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {NgModule} from '@angular/core';
+import {NotificationComponent} from './notification/notification.component';
 
 export const routes: Routes = [
 
@@ -22,12 +23,15 @@ export const routes: Routes = [
   },
   {
     path:'register',
-    component:RegisterPageComponent
+    component:RegistrationComponent
   },
   {
     path:'profile',
     component:ProfilePageComponent
-  }
+  },
+
+  { path: 'notification', component: NotificationComponent },
+  // other routes
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

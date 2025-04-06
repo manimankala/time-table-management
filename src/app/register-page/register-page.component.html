@@ -1,0 +1,101 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<div class="registration-container">
+  <h2>Registration</h2>
+
+  <div class="flow-selector">
+    <button class="active">Student Registration</button>
+    <button>Staff Registration</button>
+  </div>
+
+  <form>
+    <!-- Personal Information Section -->
+    <fieldset class="form-section">
+      <legend>Personal Information</legend>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="student-fields">
+        <div class="form-group">
+          <label for="class">Class</label>
+          <input type="text" id="class">
+        </div>
+
+        <div class="form-group">
+          <label for="section">Section</label>
+          <input type="text" id="section">
+        </div>
+
+        <div class="form-group">
+          <label for="rollNo">Roll Number</label>
+          <input type="text" id="rollNo">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Address Information Section -->
+    <fieldset class="form-section">
+      <legend>Address Information</legend>
+
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" id="street">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city">
+        </div>
+
+        <div class="form-group">
+          <label for="pincode">Pincode</label>
+          <input type="text" id="pincode">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phoneNo">Phone Number</label>
+          <input type="tel" id="phoneNo">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Work Information Section (Hidden by default) -->
+    <fieldset class="form-section staff-section" style="display: none;">
+      <legend>Work Information</legend>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="designation">Designation</label>
+          <input type="text" id="designation">
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text" id="department">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-actions">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

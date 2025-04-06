@@ -1,0 +1,131 @@
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fc;
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+  }
+
+  .welcome-message {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #666;
+    text-align: center;
+  }
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 25px;
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .btn-edit {
+    padding: 8px 20px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+}
+
+.profile-details {
+  width: 100%;
+
+  .detail-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+    }
+
+    .detail-value {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+      background: #f8f9fc;
+    }
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    .detail-group {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+
+    .btn-edit {
+      width: 100%;
+    }
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+}
