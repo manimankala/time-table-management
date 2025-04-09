@@ -1,9 +1,11 @@
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './register-page.component.html',
+  imports : [CommonModule,NgIf],
   styleUrls: ['./register-page.component.scss']
 })
 export class RegistrationComponent {
@@ -56,4 +58,6 @@ export class RegistrationComponent {
       // Here you would typically send the data to your backend
     }
   }
+
+  selectedtab : any = "STUDENT"
 }

@@ -20,8 +20,14 @@ export class TimeTableService {
   snackBarOpen(message : any,closingCommad : any){
     this.snackBar.open(message,closingCommad,{duration : 3000})
   }
-  getProfileData(userId:string){
-    return this.http.get(`${this.BASE_URL}profile/get/${userId}`)
+  getProfileData(userId: any){
+    if(!userId)
+      return
+    return this.http.put(`${this.BASE_URL}user/filter`,userId)
+  }
+
+  logout(){
+    localStorage.clear();
   }
   //
   // getTimetable(){
