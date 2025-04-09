@@ -15,7 +15,7 @@
     <p class="welcome-message">View and manage your profile details</p>
 
     <div class="profile-header">
-      <div class="avatar">JD</div>
+      <div class="avatar">{{ avatarInitials }}</div>
       <div class="profile-actions">
         <button class="btn-edit">Edit Profile</button>
       </div>
@@ -24,34 +24,36 @@
     <div class="profile-details">
       <div class="detail-group">
         <label>Full Name</label>
-        <div class="detail-value">John Doe</div>
+        <div class="detail-value">{{ profileData.name || 'N/A' }}</div>
       </div>
 
       <div class="detail-group">
         <label>Roll Number</label>
-        <div class="detail-value">2023CS101</div>
+        <div class="detail-value">{{ profileData.unqNo || 'N/A' }}</div>
       </div>
 
       <div class="detail-row">
         <div class="detail-group">
           <label>Class</label>
-          <div class="detail-value">12</div>
+          <div class="detail-value">{{ profileData.className || 'N/A' }}</div>
         </div>
 
         <div class="detail-group">
           <label>Section</label>
-          <div class="detail-value">A</div>
+          <div class="detail-value">{{ profileData.section || 'N/A' }}</div>
         </div>
       </div>
 
       <div class="detail-group">
         <label>Email</label>
-        <div class="detail-value">john.doeschool.edu</div>
+        <div class="detail-value">{{ profileData.contactDetails?.email || 'N/A' }}</div>
       </div>
 
       <div class="detail-group">
         <label>Mobile Number</label>
-        <div class="detail-value">+91 9876543210</div>
+        <div class="detail-value">
+          {{ profileData.contactDetails?.countryCode || '' }} {{ profileData.contactDetails?.phone || 'N/A' }}
+        </div>
       </div>
     </div>
   </div>

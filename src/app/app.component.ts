@@ -1,12 +1,26 @@
-import {RouterOutlet} from '@angular/router';
-import {TimeTableComponent} from './time-table/time-table.component';
-import {Component} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import {NavBarComponent} from './nav-bar/nav-bar.component';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TimeTableComponent],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, NavBarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showNavbar = false;
+
+  constructor(private router: Router) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Add all routes you want to show navbar on
+        const showOnRoutes = ['/dashboard', '/timetable', '/home'];
+        this.showNavbar = showOnRoutes.includes(event.urlAfterRedirects);
+      }
+    });
+  }
   title = 'time-table-app';
 }

@@ -1,13 +1,12 @@
-import {RouterModule, Routes} from '@angular/router';
-import {LoginPageComponent} from './login-page/login-page.component';
-import {TimeTableComponent} from './time-table/time-table.component';
-import {RegistrationComponent} from './register-page/register-page.component';
-import {ProfilePageComponent} from './profile-page/profile-page.component';
-import {NgModule} from '@angular/core';
-import {NotificationComponent} from './notification/notification.component';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { TimeTableComponent } from './time-table/time-table.component';
+import { RegistrationComponent } from './register-page/register-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-
   {
     path: '',
     pathMatch: 'full',
@@ -18,21 +17,23 @@ export const routes: Routes = [
     component: LoginPageComponent
   },
   {
-    path:'time-table',
-    component:TimeTableComponent
+    path: 'time-table',
+    component: TimeTableComponent
   },
   {
-    path:'register',
-    component:RegistrationComponent
+    path: 'register',
+    component: RegistrationComponent
   },
   {
-    path:'profile',
-    component:ProfilePageComponent
+    path: 'profile',
+    component: ProfilePageComponent
   },
-
-  { path: 'notification', component: NotificationComponent },
-  // other routes
+  {
+    path: 'notification',
+    component: NotificationComponent
+  }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
