@@ -13,7 +13,6 @@
         <input type="password" id="password" placeholder="Enter your password" required [(ngModel)]="payload.password" [ngModelOptions]="{standalone: true}">
       </div>
       <button type="submit" class="btn login" (click)="loginUser()">Login</button>
-      <button type="button" class="btn register">Register</button>
-    </form>
+      <button type="button" class="btn register" (click)="navigateToRegister()">Register</button>    </form>
   </div>
 </div>

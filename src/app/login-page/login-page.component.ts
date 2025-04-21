@@ -24,7 +24,9 @@ export class LoginPageComponent {
     "username": "",
     "password": "",
   }
-
+  navigateToRegister(): void {
+    this.router.navigate(['/register']);
+  }
   loginUser(){
     this.timeTable.loginValidate(this.payload).subscribe({
       next :  (res:any)=>{

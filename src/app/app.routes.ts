@@ -1,41 +1,24 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './authguard';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TimeTableComponent } from './time-table/time-table.component';
-import { RegistrationComponent } from './register-page/register-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { RegistrationComponent } from './register-page/register-page.component';
 import { NotificationComponent } from './notification/notification.component';
-import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login'
-  },
-  {
-    path: 'login',
-    component: LoginPageComponent
-  },
-  {
-    path: 'time-table',
-    component: TimeTableComponent
-  },
-  {
-    path: 'register',
-    component: RegistrationComponent
-  },
-  {
-    path: 'profile',
-    component: ProfilePageComponent
-  },
-  {
-    path: 'notification',
-    component: NotificationComponent
-  }
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Fixed redirectTo
+  { path: 'login', component: LoginPageComponent }, // Fixed path
+  { path: 'time-table', component: TimeTableComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'login' }, // Fallback route
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
