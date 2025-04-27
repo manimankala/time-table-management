@@ -16,9 +16,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Monday</td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
+    <tr *ngFor="let row of data.elemList">
+      <td>{{row.day}}</td>
+      <td>Sub - {{row.subject}}<br><span class="teacher">| {{row.staffName}}</span></td>
       <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
       <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
       <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>

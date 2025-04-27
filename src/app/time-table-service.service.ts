@@ -29,8 +29,12 @@ export class TimeTableService {
   logout(){
     localStorage.clear();
   }
-  //
-  // getTimetable(){
-  //   return this.http.get(`${this.BASE_URL}timetable/get`)
+
+  // timeTableData(payload:any){
+  //   return this.http.put(`${this.BASE_URL}timetable/filter`,payload)
   // }
+  getTimetable(payload:any)
+  {
+    return this.http.put(`${this.BASE_URL}timetable/filter`,payload)
+  }
 }
