@@ -4,31 +4,64 @@
   <table>
     <thead>
     <tr>
-      <th>Day</th>
-      <th>9:50:AM – 10:40:AM</th>
-      <th>10:40:AM – 11:30:AM</th>
-      <th>11:30:AM – 12:20:PM</th>
-      <th>12:20:PM – 01:10:PM</th>
-      <th>01:10:PM – 01:50:PM</th>
-      <th>01:50:PM – 02:40:PM</th>
-      <th>02:40:PM – 03:30:PM</th>
-      <th>03:30:PM – 04:20:PM</th>
+      <th>Day/Time</th>
+      <th>9:50 - 10:40</th>
+      <th>10:40 - 11:30</th>
+      <th>11:30 - 12:20</th>
+      <th>12:20 - 1:10</th>
+      <th>1:10 - 1:50</th>
+      <th>1:50 - 2:40</th>
+      <th>2:40 - 3:30</th>
+      <th>3:30 - 4:20</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let row of data.elemList">
-      <td>{{row.day}}</td>
-      <td>Sub - {{row.subject}}<br><span class="teacher">| {{row.staffName}}</span></td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
-      <td class="highlight">LUNCH</td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
-      <td>Sub - Maths<br><span class="teacher">| Vinoth</span></td>
+    <tr>
+      <td>MON</td>
+      <td>DEVOPS<br>| SMR<br>|true</td>
+      <td>ADSN<br>| Mounika<br>|true</td>
+      <td colspan="2" style="text-align:center;">HRM<br>| Rajitha<br>|true</td>
+      <td rowspan="6" style="text-align:center; vertical-align:middle;">LUNCH</td>
+      <td>DEVOPS<br>| SMR<br>|true</td>
+      <td>ADSN<br>| Mounika<br>|true</td>
+      <td>LIBRARY</td>
+    </tr>
+    <tr>
+      <td>TUE</td>
+      <td>HRM<br>| Rajitha<br>|true</td>
+      <td colspan="2" style="text-align:center;">ADSN<br>| Mounika<br>|true</td>
+      <td>Project Seminars<br>| Keerthaana<br>|true</td>
+      <td>ADSN<br>| Mounika<br>|true</td>
+      <td colspan="2" style="text-align:center;">DEVOPS<br>| SMR<br>|true</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>WED</td>
+      <td>HRM<br>| Rajitha<br>|true</td>
+      <td>DEVOPS<br>| SMR<br>|true</td>
+      <td colspan="2" style="text-align:center;">ADSN<br>| Mounika<br>|true</td>
+      <td>DEVOPS<br>| SMR<br>|true</td>
+      <td>ADSN<br>| Mounika<br>|true</td>
+      <td>Project Seminars<br>| Keerthaana<br>|true</td>
+    </tr>
+    <tr>
+      <td>THU</td>
+      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+    </tr>
+    <tr>
+      <td>FRI</td>
+      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+    </tr>
+    <tr>
+      <td>SAT</td>
+      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
     </tr>
     </tbody>
   </table>
+
   <div class="actions">
     <button class="print-btn">Print</button>
     <button class="edit-btn">Edit</button>
