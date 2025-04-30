@@ -30,9 +30,10 @@ export class TimeTableService {
     localStorage.clear();
   }
 
-  // timeTableData(payload:any){
-  //   return this.http.put(`${this.BASE_URL}timetable/filter`,payload)
-  // }
+  registerUser(payload : any){
+    return this.http.post(`${this.BASE_URL}user`,payload)
+  }
+
   getTimetable(payload:any)
   {
     return this.http.put(`${this.BASE_URL}timetable/filter`,payload)

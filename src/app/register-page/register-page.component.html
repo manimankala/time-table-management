@@ -6,31 +6,44 @@
     <button (click)="selectedtab = 'STAFF'" [class.active]="selectedtab == 'STAFF'">Staff Registration</button>
   </div>
 
-  <form>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <legend>Personal Information</legend>
+
+    <div class="form-group">
+      <label for="studentName">Full Name</label>
+      <input type="text" id="studentName" formControlName="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="rollNo">{{selectedtab == "STUDENT" ? "Roll No" : "Staff Id"}}</label>
+      <input type="text" id="rollNo" formControlName="unqNo">
+    </div>
+
     <!-- Personal Information Section -->
     <fieldset class="form-section" *ngIf="selectedtab == 'STUDENT'">
-      <legend>Personal Information</legend>
-
-      <div class="form-group">
-        <label for="studentName">Full Name</label>
-        <input type="text" id="studentName" required>
-      </div>
-
       <div class="student-fields">
         <div class="form-group">
           <label for="class">Class</label>
-          <input type="text" id="class">
+          <select id="class" formControlName="className" (change)="onClassChange($event)">
+            <option value="" disabled selected>Select Class</option>
+            <ng-container *ngFor="let class of classes">
+              <option [value]="class.value">{{ class.name }}</option>
+            </ng-container>
+          </select>
         </div>
 
         <div class="form-group">
           <label for="section">Section</label>
-          <input type="text" id="section">
+          <select id="section" formControlName="section" (change)="onSectionChange($event)">
+            <option value="" disabled selected>Select Section</option>
+            <ng-container *ngFor="let section of sections">
+              <option [value]="section.value">{{ section.name }}</option>
+            </ng-container>
+          </select>
         </div>
 
-        <div class="form-group">
-          <label for="rollNo">Roll Number</label>
-          <input type="text" id="rollNo">
-        </div>
+        
       </div>
     </fieldset>
 
@@ -38,64 +51,60 @@
       <legend>Work Information</legend>
 
       <div class="form-group">
-        <label for="staffName">Full Name</label>
-        <input type="text" id="staffName" required>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" formControlName="subject">
       </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="staffRollNo">Staff Id</label>
-          <input type="text" id="staffRollNo">
-        </div>
-
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject">
-        </div>
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" id="designation" formControlName="designation">
       </div>
 
-      <div class="form-row">
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" id="department" formControlName="department">
+      </div>
+    </fieldset>
+
+    <!-- Address Information -->
+    <fieldset class="form-section">
+      <legend>Address Information</legend>
+
+      <div formGroupName="addressDetails">
         <div class="form-group">
-          <label for="designation">Designation</label>
-          <input type="text" id="designation">
+          <label for="street">Street</label>
+          <input type="text" id="street" formControlName="street">
         </div>
 
-        <div class="form-group">
-          <label for="department">Department</label>
-          <input type="text" id="department">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city">
+          </div>
+
+          <div class="form-group">
+            <label for="zipCode">Pincode</label>
+            <input type="text" id="zipCode" formControlName="zipCode">
+          </div>
         </div>
       </div>
     </fieldset>
 
+    <!-- Contact Information -->
     <fieldset class="form-section">
-      <legend>Address Information</legend>
+      <legend>Contact Information</legend>
 
-      <div class="form-group">
-        <label for="street">Street</label>
-        <input type="text" id="street">
-      </div>
+      <div formGroupName="contactDetails">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNo">Phone Number</label>
+            <input type="tel" id="phone" formControlName="phone">
+          </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="city">City</label>
-          <input type="text" id="city">
-        </div>
-
-        <div class="form-group">
-          <label for="pincode">Pincode</label>
-          <input type="text" id="pincode">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phoneNo">Phone Number</label>
-          <input type="tel" id="phoneNo">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email">
+          </div>
         </div>
       </div>
     </fieldset>
