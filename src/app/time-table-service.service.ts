@@ -38,4 +38,15 @@ export class TimeTableService {
   {
     return this.http.put(`${this.BASE_URL}timetable/filter`,payload)
   }
+
+  getTimeTableData(){
+    let profileData = JSON.parse(JSON.stringify(localStorage.getItem('profileData')))
+    let payload = {
+      branch : profileData?.branch,
+      className : profileData?.className,
+      section : profileData?.section,
+      semester : profileData?.semester,
+    }
+    return this.http.put(`${this.BASE_URL}timetable/filter`,payload)
+  }
 }

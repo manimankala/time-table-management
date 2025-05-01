@@ -18,7 +18,7 @@ export class TimeTableComponent {
               private router : Router
   ){
   }
-
+  Object = Object;
   ngOnInit()
   {
     this.getTimetableDetails();
@@ -26,44 +26,16 @@ export class TimeTableComponent {
 
   mondayArray:any=[];
   data:any=[];
+  index = 0
   getTimetableDetails()
   {
-    let payload = {
-      "branch": "CSB",
-      "className": "B_TECH",
-      "section": "A",
-      "semester": "S8"
-    }
-    this.timeTable.getTimetable(payload).subscribe((res:any)=>{
-      console.log(res);
+    this.timeTable.getTimeTableData().subscribe((res:any)=>{
       this.data=res.data[0];
-      res.data[0].elemList.forEach((data:any) => {
-        if(data.day==="MONDAY")
-        {
-          this.mondayArray.push(data);
-        }
-      });
-      console.log(this.mondayArray);
+      console.log(this.data)
+      for(let  ele of Object.keys(this.data.elemList))
+      {
+        this.data.elemList[ele].splice(4,0,"Lunch Break")
+      }
     })
   }
-  // // Sample data for the timetable
-  // timetableData = [
-  //   { day: 'Monday', subject: 'Math', time: '9:00 AM - 10:00 AM' },
-  //   { day: 'Monday', subject: 'Science', time: '10:00 AM - 11:00 AM' },
-  //   { day: 'Tuesday', subject: 'History', time: '9:00 AM - 10:00 AM' },
-  //   { day: 'Tuesday', subject: 'Physical Education', time: '10:00 AM - 11:00 AM' },
-  //   // Add more data as needed
-  // ];
-  //
-  // getTimetable(){
-  //   // this.timeTable.getTimetable().subscribe({
-  //   //   next : (res)=>{
-  //   //     console.log(res)
-  //   //   },
-  //   //   error : (err)=>{
-  //   //     console.log(err)
-  //   //   }
-  //   // })
-  // }
-
 }

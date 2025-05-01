@@ -16,48 +16,18 @@
     </tr>
     </thead>
     <tbody>
+      <ng-container *ngFor="let day of Object.keys(data.elemList)">
+      <tr>
+        <td>{{ day}}</td>
+        <td *ngFor="let subject of data.elemList[day];let i = index">
+          <div class="subject-name">{{ subject.subject}}</div>
+          <div class="subject-teacher">{{ subject.staffName }}</div>
+          <div class="subject-room" *ngIf="i != 4">True</div>
+          <div *ngIf="i == 4 && day == 'WEDNESDAY'">Lunch Break</div>
+        </td>
+      </ng-container>
     <tr>
-      <td>MON</td>
-      <td>DEVOPS<br>| SMR<br>|true</td>
-      <td>ADSN<br>| Mounika<br>|true</td>
-      <td colspan="2" style="text-align:center;">HRM<br>| Rajitha<br>|true</td>
-      <td rowspan="6" style="text-align:center; vertical-align:middle;">LUNCH</td>
-      <td>DEVOPS<br>| SMR<br>|true</td>
-      <td>ADSN<br>| Mounika<br>|true</td>
-      <td>LIBRARY</td>
-    </tr>
-    <tr>
-      <td>TUE</td>
-      <td>HRM<br>| Rajitha<br>|true</td>
-      <td colspan="2" style="text-align:center;">ADSN<br>| Mounika<br>|true</td>
-      <td>Project Seminars<br>| Keerthaana<br>|true</td>
-      <td>ADSN<br>| Mounika<br>|true</td>
-      <td colspan="2" style="text-align:center;">DEVOPS<br>| SMR<br>|true</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>WED</td>
-      <td>HRM<br>| Rajitha<br>|true</td>
-      <td>DEVOPS<br>| SMR<br>|true</td>
-      <td colspan="2" style="text-align:center;">ADSN<br>| Mounika<br>|true</td>
-      <td>DEVOPS<br>| SMR<br>|true</td>
-      <td>ADSN<br>| Mounika<br>|true</td>
-      <td>Project Seminars<br>| Keerthaana<br>|true</td>
-    </tr>
-    <tr>
-      <td>THU</td>
-      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
-      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
-    </tr>
-    <tr>
-      <td>FRI</td>
-      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
-      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
-    </tr>
-    <tr>
-      <td>SAT</td>
-      <td colspan="4" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
-      <td colspan="3" style="text-align:center;">MAJOR PROJECT<br>| Keerthana<br>|true</td>
+      
     </tr>
     </tbody>
   </table>
