@@ -31,7 +31,6 @@ export class TimeTableComponent {
   {
     this.timeTable.getTimeTableData().subscribe((res:any)=>{
       this.data=res.data[0];
-      console.log(this.data)
       for(let  ele of Object.keys(this.data.elemList))
       {
         this.data.elemList[ele].splice(4,0,"Lunch Break")

@@ -6,6 +6,7 @@ import { TimeTableComponent } from './time-table/time-table.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RegistrationComponent } from './register-page/register-page.component';
 import { NotificationComponent } from './notification/notification.component';
+import {ErrorPageComponent} from './error-page/error-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Fixed redirectTo
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegistrationComponent },
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
+  {path: 'error', component: ErrorPageComponent}, // Error page route
   { path: '**', redirectTo: 'login' }, // Fallback route
 ];
 
